@@ -123,7 +123,6 @@ public void setType(String type) {
 	this.type = type;
 }
 
-
 public boolean isRed() {
 	return red;
 }
