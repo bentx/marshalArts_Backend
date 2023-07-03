@@ -116,6 +116,8 @@ public class marshalcontroller {
 	
 	
 	@PostMapping("/addUser")
+	@CrossOrigin
+
 	public User  addUser( @RequestBody User user) {
 		user.setId(user.getName()+user.getMobile());
 		UserRepo.save(user);
