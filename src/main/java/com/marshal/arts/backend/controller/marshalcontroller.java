@@ -30,7 +30,7 @@ import com.marshal.arts.backend.repo.UserRepo;
 import com.marshal.arts.backend.service.JwtUserDetailsService;
 
 @RestController
-@CrossOrigin
+// @CrossOrigin(origins = "https://mstc-backend.herokuapp.com/")
 public class marshalcontroller {
 	
 	@Autowired
@@ -73,7 +73,6 @@ public class marshalcontroller {
 	}
 	
 	@GetMapping("test")
-	@CrossOrigin
 	public List<ActiveUser> test() {
 		ActiveUser user = new ActiveUser();
 		user.setActiveuser(200);
@@ -99,7 +98,6 @@ public class marshalcontroller {
 		
 	}
 	@GetMapping("/result/{mob}")
-	@CrossOrigin
 	public List<User> testno(@PathVariable String mob) {
 		
 		return UserRepo.findByMobile(mob);
@@ -107,7 +105,6 @@ public class marshalcontroller {
 	}
 	
 	@GetMapping("activeuser")
-	@CrossOrigin
 	public List<ActiveUser> ActiveUser() {
 		
 		return ActiveUserRepo.findAll();
